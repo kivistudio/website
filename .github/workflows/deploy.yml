@@ -42,17 +42,3 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  tag:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Create release tag
-        run: |
-          TAG_NAME="deploy-$(date +'%Y-%m-%d-%H%M%S')"
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag -a "$TAG_NAME" -m "Deployed on $(date +'%Y-%m-%d %H:%M:%S UTC')"
-          git push origin "$TAG_NAME"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
