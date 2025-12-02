@@ -56,6 +56,10 @@ serve: ## Build and serve locally
 	@echo "$(BLUE)Building and serving Quartz on port $(PORT)...$(NC)"
 	npx quartz build -d $(CONTENT_DIR) -o $(OUTPUT_DIR) --serve --port $(PORT)
 
+watch: ## Build and watch for changes with hot-reload
+	@echo "$(BLUE)Building and watching for changes...$(NC)"
+	npx quartz build -d $(CONTENT_DIR) -o $(OUTPUT_DIR) --serve --watch --port $(PORT)
+
 update: ## Get latest Quartz updates
 	@echo "$(BLUE)Updating Quartz...$(NC)"
 	npx quartz update
