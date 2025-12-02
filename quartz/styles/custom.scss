@@ -1,3 +1,90 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// Custom styling applying design principles
+
+// Improved content proportions and spacing
+.page {
+  // Optimal reading width for both title and content
+  .popover-hint,
+  article {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  article {
+    // Enhanced vertical rhythm using modular scale
+    > h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      
+      @media (max-width: 800px) {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+    
+    > p {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      margin-bottom: 1.0rem;
+      
+      @media (max-width: 800px) {
+        font-size: 1.0625rem;
+        line-height: 1.7;
+      }
+    }
+  }
+}
+
+// Header styling
+header {
+  padding: 3rem 0 2.5rem !important;
+  
+  @media (max-width: 800px) {
+    padding: 2rem 0 1.5rem !important;
+  }
+}
+
+// Refined page header area
+.page-header {
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+  
+  @media (max-width: 800px) {
+    margin-bottom: 1rem !important;
+  }
+}
+
+// Article title styling
+.article-title {
+  margin-top: 0 !important;
+}
+
+// Content metadata styling improvements
+.content-meta {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+// Footer spacing
+.page-footer {
+  margin-top: 4rem !important;
+  
+  @media (max-width: 800px) {
+    margin-top: 3rem !important;
+  }
+}
+
+// Center content area improvements
+.center {
+  padding-top: 2rem;
+  
+  @media (max-width: 800px) {
+    padding-top: 1rem;
+  }
+}
